@@ -41,7 +41,10 @@ namespace ComandoCentralLauncher
                 }
                 firstexec = false;
             }
-
+            if (!Directory.Exists(Path.GetDirectoryName(dstlogfile)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(dstlogfile));
+            }
             StreamWriter file = new StreamWriter(dstlogfile, true);
 
             try
