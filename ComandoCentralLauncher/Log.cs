@@ -46,15 +46,15 @@ namespace ComandoCentralLauncher
                 Directory.CreateDirectory(Path.GetDirectoryName(dstlogfile));
             }
             StreamWriter file = new StreamWriter(dstlogfile, true);
-
+            
             try
             {
                 if (!writeHead)
                 {
-                    string fileheader = "###############################################################\r";
-                    fileheader = fileheader + "############### Comando Central Launcher ######################\r";
-                    fileheader = fileheader + "############### " + DateTime.Now + " #################\r";
-                    fileheader = fileheader + "###############################################################\r";
+                    string fileheader = "###############################################################\r\n";
+                    fileheader = fileheader + "############### Comando Central Launcher ######################\r\n";
+                    fileheader = fileheader + "############### " + DateTime.Now + " #################\r\n";
+                    fileheader = fileheader + "###############################################################\r\n";
                     fileheader = fileheader + msg;
                     file.WriteLine(fileheader);
                     writeHead = true;

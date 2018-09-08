@@ -37,7 +37,7 @@ namespace ComandoCentralLauncher
         public async void StartComandoCentral()
         {
             InitializeComponent();
-
+            //MessageBox.Show("Click para continuar!");
             InstallUpdateCC installupdatecc = new InstallUpdateCC(this);
 
             if (await installupdatecc.isMSAccessInstalled())
@@ -47,9 +47,9 @@ namespace ComandoCentralLauncher
                     WindowsTokenEvaluation.CheckElevation();
                     await installupdatecc.installCCBin();
                 }
-
+                
                 await installupdatecc.UpdateCC();
-
+                
                 LaunchAccess.Launch();
                 Application.Current.Shutdown();
             }

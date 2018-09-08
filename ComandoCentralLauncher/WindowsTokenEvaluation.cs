@@ -91,6 +91,7 @@ namespace ComandoCentralLauncher
             if (tokenElevationType == TOKEN_ELEVATION_TYPE.TokenElevationTypeLimited)
             {
                 ProcessStartInfo processStartInfo = new ProcessStartInfo(Assembly.GetExecutingAssembly().CodeBase);
+                // I guess I have to change it to false.
                 processStartInfo.UseShellExecute = true;
                 processStartInfo.Verb = "runas";
                 Process.Start(processStartInfo);
